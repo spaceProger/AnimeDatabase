@@ -1,0 +1,7 @@
+[project]
+name = "animedatabase"
+version = "0.1.0"
+description = "Anime Database project for manipulation your anime titles"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = []
