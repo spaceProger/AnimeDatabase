@@ -1,0 +1,32 @@
+body{
+	background-color: #E4E4E4;
+}
+header{
+	width: 1000px;
+	height: 109px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: url('../images/Rectangle 3.svg');
+	background-repeat: no-repeat;
+
+}
+
+
+.icon{
+	margin-left: 20px;
+}
+.FirstPage{
+	width: 1000px;
+	height: 739px;
+	background: url('../images/Rectangle 2.svg');
+	background-repeat: no-repeat;
+}
+
+.btn1:hover{
+	filter: brightness(80%)
+}
+
+.btn1{
+	transition: all 0.3s ease; /*все изменения происходят в 0.5 секунд*/
+}
