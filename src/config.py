@@ -29,7 +29,7 @@ class ServerConfig(BaseSettings):
 
 
 class MainConfig(DatabaseConfig, ServerConfig, BaseSettings):
-    PROJECT_NAME = "anime-database"
+    PROJECT_NAME: str = "anime-database"
 
     RUNTYPE: str
 

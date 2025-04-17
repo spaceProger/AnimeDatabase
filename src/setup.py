@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from src.info.router import router as info_router
+from info.router import router as info_router
 
 
 def include_routers(app: FastAPI) -> None:

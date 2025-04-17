@@ -1,4 +1,4 @@
-from src.config import main_config
+from config import main_config
 
 
 def app_host() -> str:

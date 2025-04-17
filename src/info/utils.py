@@ -1,4 +1,4 @@
-from src.info import constants
+from info import constants
 
 
 def project_description():
