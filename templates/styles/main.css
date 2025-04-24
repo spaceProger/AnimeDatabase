@@ -4,31 +4,29 @@ body{
 	align-items: center;
 	background-color: #E4E4E4;
 }
+
+/* HEADER  */
+
 header{
-	margin-top: 5vh;
-	width: 70vw;
-	height: 70px;
+	margin-top: 3vh;
+	width: 50vw;
+	height: 50px;
 	display: flex;
 	justify-content: space-between;
-	/*background: url('./images/Rectangle 3.svg') center no-repeat;
-	background-size: 100%;*/
 	background-color: white;
-	padding: 15px 15px 15px 30px;
-	border-radius: 20px;
+	padding: 17px 2vw 17px 2vw;
+	border-radius: 25px;
 	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-	min-width: 575px;
+	
 
+}
+.headerElement{
+	height: 50px;
+	width: auto;
+	object-fit: contain;
 }
 .button_New{
 	margin-right: 10px;
-}
-
-
-.FirstPage{
-	width: 1000px;
-	height: 739px;
-	background: url('../images/Rectangle 2.svg');
-	background-repeat: no-repeat;
 }
 
 .btn1:hover{
@@ -36,5 +34,93 @@ header{
 }
 
 .btn1{
-	transition: all 0.3s ease; /*все изменения происходят в 0.5 секунд*/
+	transition: all 0.3s ease; 
+}
+
+/* MEDIA  */
+
+@media (max-width: 1000px){
+	.headerElement{
+		height: 25px; 
+		width: auto; 
+		object-fit: contain; 
+	}
+	.button_New{
+		margin-right: 5px;
+	}
+	header{
+		height: 25px;
+		padding: 10px 2vw 10px 2vw;
+		border-radius: 15px;
+	}
+	
+}
+
+@media (max-width: 490px){
+	.headerElement{
+		height: 15px; 
+		width: auto; 
+		object-fit: contain; 
+	}
+	.button_New{
+		margin-right: 2px;
+	}
+	header{
+		margin-top: 3vh;
+		height: 15px;
+		padding: 5px 2vw 5px 2vw;
+		border-radius: 8px;
+	}
+}
+
+/* MAIN SECTION */
+
+.FirstPage{
+	margin-top: 20px;
+	width: 50vw;
+	background-color: white;
+	padding: 4vh 2vw 4vh 2vw;
+	border-radius: 30px;
+	box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+
+	display: flex;
+	justify-content: space-between;
+}
+.contactsFP{
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+.contactsElement{
+	height: 75px; 
+	width: auto; 
+	object-fit: contain; 
+}
+.headingFP{
+	font-size: 35px;
+	font-family: sans-serif;
+	font-weight: bold;
+	margin: 0 0 5px 0;
+}
+.text1FP{
+	font-size: 19px;
+	font-weight: bold;
+	font-family: sans-serif;
+	text-indent: 5%;
+	margin: 0 0 0 0;
+	word-spacing: 15px;
+}
+
+.descriptionFP{
+	font-size: 20px;
+	font-family: sans-serif;
+	margin: 10px 0 5px 0;
+}
+.descriptionElementsFP{
+	font-size: 20px;
+	font-family: sans-serif;
+	font-weight: bold;
+	padding: 0 0 0 30px;
+	margin: 0 0 0 0;
+	text-indent: 0;
 }
