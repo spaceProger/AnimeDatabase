@@ -2,11 +2,13 @@ from pydantic_settings import BaseSettings
 from pydantic_settings import SettingsConfigDict
 
 from config.db import DatabaseConfig
+from config.email import EmailConfig
 from config.server import ServerConfig
 
 
 class MainConfig(
         DatabaseConfig,
+        EmailConfig,
         ServerConfig,
         BaseSettings
         ):
