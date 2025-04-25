@@ -1,7 +1,6 @@
-from database import exceptions as database_exceptions
-
-from src.config import main_config
-from src import constants as database_constants
+from config import main_config
+import constants as database_constants
+from db import exceptions as database_exceptions
 
 
 def database_url() -> str:
