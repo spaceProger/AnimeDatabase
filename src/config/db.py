@@ -1,5 +1,5 @@
+from pydantic import FilePath
 from pydantic_settings import BaseSettings
-from pydantic_settings import SettingsConfigDict
 
 
 class DatabaseConfig(BaseSettings):
@@ -10,7 +10,7 @@ class DatabaseConfig(BaseSettings):
     DB_PORT: int
     DB_PASSWORD: str
 
-    DEV_DB_FILEPATH: str
+    DEV_DB_FILEPATH: FilePath
 
     @property
     def DB_URL(self) -> str:
@@ -20,24 +20,3 @@ class DatabaseConfig(BaseSettings):
     @property
     def DEV_DB_URL(self) -> str:
         return f"sqlite+aiosqlite://{self.DEV_DB_FILEPATH}"
-
-
-class ServerConfig(BaseSettings):
-    APP_HOST: str
-    APP_PORT: int
-    APP_WORKERS: int
-
-
-class MainConfig(DatabaseConfig, ServerConfig, BaseSettings):
-    PROJECT_NAME: str = "anime-database"
-
-    RUNTYPE: str
-
-    model_config = SettingsConfigDict(
-            env_file=".env",
-            env_file_encoding="utf-8",
-    )
-
-
-main_config = MainConfig()
-
