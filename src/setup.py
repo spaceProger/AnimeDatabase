@@ -14,7 +14,7 @@ def include_routers(app: FastAPI, routers: Sequence[APIRouter]) -> None:
 
 
 def mount_files(app: FastAPI) -> None:
-    app.mount('/', StaticFiles(directory="templates"), name="static")
+    app.mount('/static', StaticFiles(directory="templates/static"), name="static")
 
 
 def setup(app: FastAPI) -> None:
