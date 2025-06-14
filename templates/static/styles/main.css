@@ -1,5 +1,6 @@
 *{
 	margin: 0px;
+	border: 0px
 }
 body{
 	display: flex;
@@ -156,6 +157,7 @@ header{
 		margin-top: 15px;
 		font-size: 7px;
 		border-radius: 20px;
+		padding: 2vh 1vw 2vh 1vw;
 	}
 	.contactsElement{
 		height: 55px;
@@ -196,7 +198,6 @@ header{
 /* Login Page */
 .center{
 	display: flex;
-	flex-flow: column nowrap;
 	justify-content: center;
 	align-items: center;
 	width: 95vw;
@@ -207,35 +208,34 @@ header{
 	flex-flow: column nowrap;
 	align-items: center;
 	position: relative;
-	width: 20vw;
-	height: 45vh;
+	/* width: 20vw; */
+	/* height: 45vh; */
 	background-color: white;
 	padding: 3vh 2vw 3vh 2vw;
 	border-radius: 5vh;
-	box-shadow: 0px 0px 1vh 0px rgba(0, 0, 0, 0.5);
+	box-shadow: 0px 0px 1vh 0px rgba(0, 0, 0, 0.1);
 	
 }
 
-.iconLP{
+.LoginPage>img{
 	
-	height: 6vh;
-	width: auto;
+	width: 16vw;
 	object-fit: contain;
 	margin-top: 2vh;
 }
-.registrationLP{
+.LoginPage>p{
 	white-space: nowrap;
 	font-size: 1.7vw;
+	font-weight: bold;
 	margin-top: 5vh;
 	margin-bottom: 3vh;
 }
 
-/* Можно будет в будущем объединить с .center */
-.EmailSenderForm{
+.LoginPage>form{
 	display: flex;
-	flex-flow: column nowrap;
+	flex-direction: column;
 	align-items: center;
-	gap: 0px;
+	margin-bottom: 2vh;
 }  
 
 .EmailSender{
@@ -245,7 +245,6 @@ header{
 	font-size: 1.8vw;
 	text-align: center;
 	text-decoration: underline #00000075;
-	border: 0px;
 	border-radius: 1.2vw;
 }
 
@@ -255,10 +254,8 @@ header{
 	height: 10vh;
 	font-size: 2vw;
 	background-color: #E94D4D;
-	border: 0px;
 	border-radius: 1vw;
 	color: #FFFFFF;
-	
 }
 .input:hover{
 	filter: brightness(90%);
@@ -266,4 +263,26 @@ header{
 .input{
 	transition: all 0s ease;
 	cursor: pointer;
+}
+
+/* Media LP */
+@media (max-width: 820px) and (min-height: 600px){
+	.LoginPage>img{
+		min-width: 150px;
+	}
+	.LoginPage>p{
+		font-size: 15px;
+	}
+	.EmailSender{
+		width: 180px;
+		height: 50px;
+		font-size: 16px;
+		border-radius: 10px;
+	}
+	.inputLP{
+		width: 150px;
+		height: 50px;
+		font-size: 18px;
+		border-radius: 10px;
+	}
 }
