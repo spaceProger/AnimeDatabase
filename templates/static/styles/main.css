@@ -208,8 +208,6 @@ header{
 	flex-flow: column nowrap;
 	align-items: center;
 	position: relative;
-	/* width: 20vw; */
-	/* height: 45vh; */
 	background-color: white;
 	padding: 3vh 2vw 3vh 2vw;
 	border-radius: 5vh;
