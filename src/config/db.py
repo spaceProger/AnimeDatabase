@@ -19,4 +19,4 @@ class DatabaseConfig(BaseSettings):
 
     @property
     def DEV_DB_URL(self) -> str:
-        return f"sqlite+aiosqlite://{self.DEV_DB_FILEPATH}"
+        return f"sqlite+aiosqlite:///{self.DEV_DB_FILEPATH}"

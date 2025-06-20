@@ -18,6 +18,8 @@ def get_template(
         headers: Mapping[str, str] | None = None,
         media_type: str | None = None,
         ) -> _TemplateResponse:
+    if context is None:
+        context = dict()
     return templates.TemplateResponse(
         request=request,
         name=name,
