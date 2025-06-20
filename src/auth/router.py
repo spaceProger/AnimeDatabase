@@ -11,9 +11,5 @@ router = APIRouter(
 
 
 @router.get("/login")
-def login(request: Request):
-    return template(
-        request,
-        auth_constants.LOGIN_PAGE,
-        {}
-    )
+def login_page(request: Request):
+    return template(request, auth_constants.LOGIN_PAGE)

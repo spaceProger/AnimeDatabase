@@ -23,6 +23,8 @@ class EmailClient(smtplib.SMTP):
         self.starttls()
         self.login(self.__email_box, self.__email_box_password)
         mail = MIMEText(text, "html")
+        if subject is None:
+            subject = ""
         mail["Subject"] = subject
         self.sendmail(self.__email_box, to_email_box, mail.as_string())
         self.quit()

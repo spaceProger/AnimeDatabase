@@ -2,6 +2,7 @@ from fastapi import APIRouter
 
 from auth import constants as auth_constants
 from auth import utils as auth_utils
+from pydantic import EmailStr
 from services.alerts import email_client
 
 
@@ -11,8 +12,8 @@ router = APIRouter(
 )
 
 
-@router.get("/login")
-def login(email: str):
+@router.post("/login")
+def login(email: EmailStr):
     code = auth_utils.auth_code()
     mailbox = email_client()
     mailbox.message(
