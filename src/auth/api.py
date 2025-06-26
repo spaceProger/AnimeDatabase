@@ -57,7 +57,7 @@ def auth_code(
             ):
         # TODO: authorization ...
         return {"status": "success", "message": "authorization passed"}
-    return HTTPException(status_code=401, detail="authorization failed")
+    raise HTTPException(status_code=401, detail="authorization failed")
 
 
 # TODO: add depends
