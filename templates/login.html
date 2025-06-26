@@ -14,7 +14,7 @@
             <!-- LP = Login Page -->
             <img src="./static/images/ADatabase.svg" alt="icon_AnimeDatabase">
             <p>Вход / Регистрация</p>
-            <form class="EmailSenderForm">
+            <form class="EmailSenderForm" action="/api/login" method="POST">
                 <input class="EmailSender" type="email" name="email" placeholder="Электронная почта">
                 <input class="input inputLP" type="submit" value="Продолжить">
             </form>
