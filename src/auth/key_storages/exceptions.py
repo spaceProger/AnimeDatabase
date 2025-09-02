@@ -1,0 +1,2 @@
+class AddItemStorageError(BaseException):
+    pass

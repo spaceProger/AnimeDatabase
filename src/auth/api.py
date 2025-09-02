@@ -6,9 +6,9 @@ from fastapi.exceptions import HTTPException
 from auth import constants as auth_constants
 from auth import schemas as auth_schemas
 from auth import utils as auth_utils
-from auth.storages import InMemoryStorage
+from auth.key_storages import AbstractAuthKeyStorage
 from db import async_session as async_db_session
-from services.alerts import email_client
+from services.notification import AbstractNotificationService
 
 
 router = APIRouter(
@@ -21,6 +21,8 @@ router = APIRouter(
 @router.post("/login")
 async def auth_email(
         user: Annotated[auth_schemas.LoginUser, Form()],
+        notification_service: AbstractNotificationService,
+        auth_key_storage: AbstractAuthKeyStorage,
         ) -> dict[str, str]:
     db_session = async_db_session()
     if await auth_utils.has_account(email=user.email, db_session=db_session):
@@ -31,12 +33,10 @@ async def auth_email(
         subject=auth_constants.SIGNUP_EMAIL_SUBJECT
     await db_session.close()
 
-    storage = InMemoryStorage()
     code = auth_utils.auth_code(key=user.email, storage=storage)
 
-    mailbox = email_client()
-    mailbox.message(
-        to_email_box=user.email,
+    notification_service.send_message(
+        recipient=user.email,
         text=text.format(code=code),
         subject=subject,
     )

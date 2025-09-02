@@ -1,13 +1,10 @@
-from fastapi import FastAPI
-
 import uvicorn
 
 import utils as app_utils
-from setup import setup as setup_app
+import setup
 
 
-app = FastAPI()
-setup_app(app)
+app = setup.get_app()
 
 
 if __name__ == "__main__":

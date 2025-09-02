@@ -10,3 +10,7 @@ dependencies = [
     "pydantic-settings>=2.8.1",
     "sqlalchemy>=2.0.40",
 ]
+
+[tool.pyright]
+venv = ".venv"
+venvPath = "."
